@@ -31,6 +31,7 @@ public class MainPersona {
     String opcion = null;
     int id_persona = 0;
     Boolean borrado = false;
+    String apellidoMaterno = null;
     
     @Autowired
     InsertaTabla tabla;
@@ -53,7 +54,15 @@ public class MainPersona {
                 personas persona = new personas();
                 persona.setNombre(datos[0]);
                 persona.setApellidoPaterno(datos[1]);
+                apellidoMaterno = datos[2];
+                int tamanoMAterno = apellidoMaterno.trim().length();
+                System.out.println("el valor de apellido materno es " + apellidoMaterno + " " + tamanoMAterno);
+                if(tamanoMAterno == 0  ){
+                    String noApellido = "no tiene apellido";
+                    persona.setApellidoMaterno(noApellido);
+                }else{
                 persona.setApellidoMaterno(datos[2]);
+                }
                 persona.setNacionalidad(datos[3]);
                 persona.setSexo(datos[4]);
                 persona.setEstadoCivil(datos[5]);
@@ -67,7 +76,7 @@ public class MainPersona {
             lectura.close();
 
             for(personas registro :alta){
-                tabla.InsertaPersona(registro);
+            tabla.InsertaPersona(registro);
             }
             
             
