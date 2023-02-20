@@ -90,6 +90,14 @@ public List<personas> Obtienepersona(int id_persona){
 
 public void BorradoPersona(int id_persona){
 
+    String  queryBorrar = Constantes.BorrarPersona();
+
+    try {
+        plantilla.update(queryBorrar , id_persona);
+    }catch(Exception e ){
+        log.info("Error al borrar  a la persona con id " + id_persona  + " " + e );
+    }
+
         
 
 }

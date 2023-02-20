@@ -85,6 +85,7 @@ public class MainPersona {
         System.out.println("a que personas deseas buscar ");
 
         id_persona = entrada.nextInt( );
+      
 
         persona = tabla.Obtienepersona(id_persona);
         log.info(" el valor de personas es  " + persona );
@@ -106,12 +107,25 @@ public class MainPersona {
 
          }
 
+         Scanner entrada2 = new Scanner(System.in);
          System.out.println("deseas borrar a esta persona de la tabla  " );
-         opcion = entrada.nextLine();
+         opcion = entrada2.nextLine();
 
          if(opcion.equalsIgnoreCase("si") ){
 
             borrado = true;
+
+         }else {
+            System.out.println("desea borrar a otra persona " );
+            opcion = entrada2.nextLine();
+            if(opcion.equalsIgnoreCase("si")){
+            System.out.println("que persona deseas borrar ");
+            id_persona = entrada2.nextInt();
+            borrado = true; 
+            }else { 
+              borrado = false;
+            }
+
 
          }
 

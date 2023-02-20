@@ -27,6 +27,17 @@ public class Constantes {
 
         return obtienePersonas.toString();               
     }
+
+    public  static String BorrarPersona (){ 
+       
+        StringBuilder queryBorrarPersonas = new StringBuilder();
+
+        queryBorrarPersonas.append("DELETE  ")
+                           .append("FROM persona ")
+                           .append("WHERE id_persona=?");
+
+     return queryBorrarPersonas.toString();                      
+    }
     
 }
 
