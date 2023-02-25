@@ -4,6 +4,8 @@ public class Constantes {
 
     public  final static String archivo ="/home/hakkon/Documentos/prueba.txt";
 
+    
+
 
     public static String InsertaPersonas(){
 
@@ -37,6 +39,14 @@ public class Constantes {
                            .append("WHERE id_persona=?");
 
      return queryBorrarPersonas.toString();                      
+    }
+
+    public static String ActualizaPersona(){
+        
+        StringBuilder queryActualiza = new StringBuilder();
+
+        queryActualiza.append("UPDATE  PERSONA ")
+                      .append("SET NOMBRE=? , ApellPaterno=?,")       
     }
     
 }
