@@ -149,18 +149,22 @@ public class MainPersona {
                 System.out.println("la edad de  " + datos.getNombre() + " es " + datos.getEdad());
 
             }
+            Scanner entrada4 = new Scanner(System.in);
             System.out.println("que campo deseas hacer");
-            opcion = entrada3.nextLine();
+            opcion = entrada4.nextLine();
             System.out.println("cambio a realizar ");
-            cambio = entrada3.nextLine();
+            cambio = entrada4.nextLine();
             modificacionPersona(opcion, cambiosPersona, cambio);
             tabla.ModificaPersona(cambiosPersona);
+            entrada4.close();
 
         }
 
         entrada.close();
         entrada2.close();
         entrada3.close();
+        
+     
 
     }
 

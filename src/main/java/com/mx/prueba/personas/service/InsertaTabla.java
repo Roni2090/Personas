@@ -117,13 +117,13 @@ public void ModificaPersona(List<personas> personas){
                 ps.setString(2,argument.getApellidoPaterno());
                 ps.setString(3,argument.getApellidoMaterno());
                 ps.setString(4,argument.getNacionalidad());
-                ps.setString(4,argument.getSexo());
-                ps.setString(5,argument.getEstadoCivil());
-                ps.setString(6,argument.getCalle());
-                ps.setString(7,argument.getNumeroCasa());
-                ps.setString(8,argument.getMunicipio());
-                ps.setInt(9,argument.getEdad());
-                ps.setInt(10,argument.getIdPersona());
+                ps.setString(5,argument.getSexo());
+                ps.setString(6,argument.getEstadoCivil());
+                ps.setString(7,argument.getCalle());
+                ps.setString(8,argument.getNumeroCasa());
+                ps.setString(9,argument.getMunicipio());
+                ps.setInt(10,argument.getEdad());
+                ps.setInt(11,argument.getIdPersona());
             }
         
             
