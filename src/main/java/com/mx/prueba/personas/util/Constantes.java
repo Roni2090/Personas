@@ -46,7 +46,10 @@ public class Constantes {
         StringBuilder queryActualiza = new StringBuilder();
 
         queryActualiza.append("UPDATE  PERSONA ")
-                      .append("SET NOMBRE=? , ApellPaterno=?,")       
+                      .append("SET NOMBRE=? ,ApellPaterno=?,apellMAterno=?,nacionalidad=?,sexo=?,estadoCivil=?,calle=?,numeroCasa=?,municipio=?,edad=? ")
+                      .append("WHERE id_persona=?"); 
+                      
+        return queryActualiza.toString();               
     }
     
 }

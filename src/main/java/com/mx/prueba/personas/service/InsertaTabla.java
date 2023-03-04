@@ -1,11 +1,14 @@
 package com.mx.prueba.personas.service;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ParameterizedPreparedStatementSetter;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.mx.prueba.personas.entity.personas;
@@ -99,6 +102,37 @@ public void BorradoPersona(int id_persona){
     }
 
         
+
+}
+
+public void ModificaPersona(List<personas> personas){
+
+    String queryActualiza = Constantes.ActualizaPersona();
+
+    try {
+        plantilla.batchUpdate(queryActualiza,personas, Integer.parseInt("1"),
+        new ParameterizedPreparedStatementSetter<personas>() {
+            public void setValues(PreparedStatement ps, personas argument )throws SQLException {
+                ps.setString(1,argument.getNombre());
+                ps.setString(2,argument.getApellidoPaterno());
+                ps.setString(3,argument.getApellidoMaterno());
+                ps.setString(4,argument.getNacionalidad());
+                ps.setString(4,argument.getSexo());
+                ps.setString(5,argument.getEstadoCivil());
+                ps.setString(6,argument.getCalle());
+                ps.setString(7,argument.getNumeroCasa());
+                ps.setString(8,argument.getMunicipio());
+                ps.setInt(9,argument.getEdad());
+                ps.setInt(10,argument.getIdPersona());
+            }
+        
+            
+        });
+
+    }catch(Exception e ){
+        log.error("Erro al actualizar la cuenta  "    + e);
+    }
+    
 
 }
 

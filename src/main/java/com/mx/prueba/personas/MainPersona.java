@@ -149,11 +149,12 @@ public class MainPersona {
                 System.out.println("la edad de  " + datos.getNombre() + " es " + datos.getEdad());
 
             }
-            System.out.println("que campo deseas cambiar ");
+            System.out.println("que campo deseas hacer");
             opcion = entrada3.nextLine();
             System.out.println("cambio a realizar ");
             cambio = entrada3.nextLine();
             modificacionPersona(opcion, cambiosPersona, cambio);
+            tabla.ModificaPersona(cambiosPersona);
 
         }
 
@@ -197,37 +198,36 @@ public class MainPersona {
                     }
                     break;
                 case "sexo":
-                    if (!cambio.equalsIgnoreCase(registro.getSexo())){
+                    if (!cambio.equalsIgnoreCase(registro.getSexo())) {
                         registro.setSexo(cambio);
                     }
                     break;
                 case "estado civil":
-                    if(!cambio.equalsIgnoreCase(registro.getEstadoCivil())){
-                       registro.setEstadoCivil(cambio);
+                    if (!cambio.equalsIgnoreCase(registro.getEstadoCivil())) {
+                        registro.setEstadoCivil(cambio);
                     }
                     break;
-                case "calle" :
-                    if(!cambio.equalsIgnoreCase(registro.getCalle())){
+                case "calle":
+                    if (!cambio.equalsIgnoreCase(registro.getCalle())) {
                         registro.setNumeroCasa(cambio);
-                    }    
+                    }
                     break;
                 case "numero casa":
-                    if(!cambio.equalsIgnoreCase(registro.getNumeroCasa())){
+                    if (!cambio.equalsIgnoreCase(registro.getNumeroCasa())) {
                         registro.setNumeroCasa(cambio);
-                    } 
-                    break;   
-                case "municipio":
-                    if(!cambio.equalsIgnoreCase(registro.getMunicipio())){
-                        registro.setMunicipio(cambio);
-                    }    
+                    }
                     break;
-                case "edad" :
-                     int cambioNumerico = Integer.valueOf(cambio);
-                    if( cambioNumerico != registro.getEdad()){
+                case "municipio":
+                    if (!cambio.equalsIgnoreCase(registro.getMunicipio())) {
+                        registro.setMunicipio(cambio);
+                    }
+                    break;
+                case "edad":
+                    int cambioNumerico = Integer.valueOf(cambio);
+                    if (cambioNumerico != registro.getEdad()) {
                         registro.setEdad(cambioNumerico);
-                    }    
-                
-
+                    }
+                    break;
 
             }
         }
